@@ -10,4 +10,4 @@ Check out the guide here: [https://kind-unes.github.io/Google-Play-how-to-delete
 
 ---
 
-_I hate this job :'_
+_I hate this job :'(
