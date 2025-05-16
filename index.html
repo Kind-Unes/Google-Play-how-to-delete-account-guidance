@@ -3,28 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delete Your Account</title>
+    <title>Webrew Soft Account Deletion</title>
     <style>
+      /* global */
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
         margin: 0;
         padding: 0;
         background: #f4f4f9;
         color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
       }
-      .container {
-        max-width: 800px;
-        margin: 30px auto;
+      main {
+        width: 100%;
+        max-width: 600px;
         padding: 20px;
+      }
+      .card {
         background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
       }
       h1 {
-        text-align: center;
         color: #007bff;
-        font-size: 2.2rem;
+        margin-top: 0;
+        font-size: 2rem;
       }
       p,
       li {
@@ -32,78 +40,163 @@
         margin-bottom: 15px;
       }
       ol {
-        margin: 20px 0;
         padding-left: 20px;
-      }
-      a {
-        color: #007bff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      a:hover {
-        text-decoration: underline;
+        margin-bottom: 20px;
       }
       img {
         max-width: 100%;
         height: auto;
-        margin: 20px 0;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
       .screenshot-caption {
-        text-align: center;
         font-size: 0.9rem;
         color: #666;
-        margin-top: 5px;
+        text-align: center;
+        margin-top: -10px;
+        margin-bottom: 20px;
+      }
+      .options {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .btn,
+      .btn-option {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #007bff;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        border-radius: 6px;
+        transition: background 0.2s;
+      }
+      .btn:hover,
+      .btn-option:hover {
+        background: #0056b3;
+      }
+      .back-link {
+        display: block;
+        margin-top: 25px;
+        font-size: 0.95rem;
+        color: #007bff;
+        text-decoration: none;
+      }
+      .back-link:hover {
+        text-decoration: underline;
       }
       footer {
-        text-align: center;
-        margin-top: 20px;
+        margin-top: 30px;
         font-size: 0.9rem;
         color: #666;
-      }
-      footer a {
-        color: #007bff;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>How To Delete Your Account</h1>
-      <p>
-        If you would like to delete your account and all associated data, please
-        follow the steps below:
-      </p>
-      <ol>
-        <li>Open the app on your device.</li>
-        <li>Go to the "Settings" or "Account" section.</li>
-        <li>
-          Locate the "Delete Account" button as shown in the screenshot below.
-        </li>
-        <li>Click on the "Delete Account" option.</li>
-        <li>Confirm your action when prompted.</li>
-      </ol>
-      <img
-        src="screenshots/delete-sc.jpg"
-        alt="Delete Account Button Screenshot"
-      />
-      <p class="screenshot-caption">
-        Screenshot showing the location of the "Delete Account" button.
-      </p>
-      <p>
-        If you encounter any issues while trying to delete your account, please
-        contact our support team:
-      </p>
-      <p>
-        <a href="mailto:hellalet.younes@gmail.com">hellalet.younes@gmail.com</a>
-      </p>
-      <footer>
+    <main>
+      <!-- Screen 1: Selection -->
+      <section id="route-select" class="card">
+        <h1>Account Deletion Options</h1>
+        <p>Select how you’d like to delete your account:</p>
+        <div class="options">
+          <a class="btn-option" href="#/delete-account"
+            >Request Account Deletion</a
+          >
+          <a class="btn-option" href="#/how-to-delete-account"
+            >How to Delete In-App</a
+          >
+        </div>
+      </section>
+
+      <!-- Screen 2: Public Deletion Request -->
+      <section id="route-delete" class="card" style="display: none">
+        <h1>Delete Your Account</h1>
         <p>
-          Your privacy and data security are important to us. If you have any
-          questions, feel free to reach out.
+          To permanently delete your account and all associated data, please
+          click below to send us a deletion request.
         </p>
-        <p>&copy; 2025 WeBrewSoft. All rights reserved.</p>
-      </footer>
-    </div>
+        <a
+          class="btn"
+          href="mailto:younes@webrewsoft.com?subject=Delete%20My%20Webrew%20Soft%20Account"
+          >Request Account Deletion</a
+        >
+
+        <a class="back-link" href="#">← Back to options</a>
+
+        <footer>
+          <p>Webrew Soft – Your privacy and data security matter.</p>
+          <p>&copy; 2025 Webrew Soft. All rights reserved.</p>
+        </footer>
+      </section>
+
+      <!-- Screen 3: In-App Deletion Instructions -->
+      <section id="route-howto" class="card" style="display: none">
+        <h1>How To Delete Your Account</h1>
+        <p>
+          If you’d like to delete your account and all data, follow these steps:
+        </p>
+        <ol>
+          <li>
+            Open the app on your device (<a
+              href="https://play.google.com/store/apps/details?id=com.hellaletyounes.abbar&hl=en"
+              target="_blank"
+              >ABBAR on Google Play</a
+            >).
+          </li>
+          <li>Go to the “Settings” or “Account” section.</li>
+          <li>Locate the “Delete Account” button as shown below.</li>
+          <li>Tap “Delete Account.”</li>
+          <li>Confirm when prompted.</li>
+        </ol>
+        <img
+          src="screenshots/delete-sc.jpg"
+          alt="Delete Account Button Screenshot"
+        />
+        <p class="screenshot-caption">
+          Screenshot showing the “Delete Account” button.
+        </p>
+        <p>
+          If you have any issues, email us:
+          <a href="mailto:hellalet.younes@gmail.com"
+            >hellalet.younes@gmail.com</a
+          >
+        </p>
+
+        <a class="back-link" href="#">← Back to options</a>
+
+        <footer>
+          <p>Your privacy and data security matter to us.</p>
+          <p>&copy; 2025 WeBrewSoft. All rights reserved.</p>
+        </footer>
+      </section>
+    </main>
+
+    <script>
+      // Hash-based routing
+      function showRoute() {
+        const hash = location.hash;
+        const showDelete = hash === "#/delete-account";
+        const showHowto = hash === "#/how-to-delete-account";
+
+        document.getElementById("route-delete").style.display = showDelete
+          ? "block"
+          : "none";
+        document.getElementById("route-howto").style.display = showHowto
+          ? "block"
+          : "none";
+        document.getElementById("route-select").style.display =
+          !showDelete && !showHowto ? "block" : "none";
+      }
+
+      window.addEventListener("hashchange", showRoute);
+      window.addEventListener("load", showRoute);
+    </script>
   </body>
 </html>
